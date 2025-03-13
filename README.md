@@ -1,5 +1,5 @@
 # bilibili视频解析
-支持监听群内https://www.bilibili.com/video/BV号/内容并且以合并转发方式发送视频信息及视频
+支持监听群内https://www.bilibili.com/video/BV号/ 内容并且以合并转发方式发送视频信息及视频
 
 # 配置
 使用Chrome cookies将bilibili的cookies.txt放入插件目录
