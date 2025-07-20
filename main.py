@@ -2,7 +2,7 @@ import re
 import httpx
 import os
 import asyncio
-import yt_dlp
+import yt-dlp
 import hashlib
 import shutil
 from astrbot.api.event import filter, AstrMessageEvent
@@ -120,7 +120,7 @@ class BiliDownloader(Star):
                 "format": "bv*+ba/bv*",  # 选取视频 + 音频
             }
 
-            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            with yt-dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(video_url, download=False)
 
                 if "_type" in info and info["_type"] == "playlist":
@@ -158,11 +158,11 @@ class BiliDownloader(Star):
             "no_warnings": True,
             "cookiefile": COOKIES_FILE,
         }
-        await asyncio.to_thread(self._run_yt_dlp, ydl_opts, url)
+        await asyncio.to_thread(self._run_yt-dlp, ydl_opts, url)
 
-    def _run_yt_dlp(self, ydl_opts, url):
+    def _run_yt-dlp(self, ydl_opts, url):
         """同步运行 yt-dlp"""
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        with yt-dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.extract_info(url, download=True)
 
     async def download_thumbnail(self, url: str, save_path: str):
